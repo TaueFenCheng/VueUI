@@ -1,1 +1,5 @@
 export * from './src/isObject'
+export * from './src/flatArr'
+export * from './src/loadJs'
+export * from './src/once'
+export * from './src/curry'
