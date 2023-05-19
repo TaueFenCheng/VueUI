@@ -1,6 +1,6 @@
 {
   "name": "@taue/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "module": "index.ts",
   "private":"false",
@@ -12,6 +12,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
