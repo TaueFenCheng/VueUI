@@ -1,7 +1,7 @@
 export function loadJS(files: string[], done: () => void) {
   // 获取head标签
   const head = document.getElementsByTagName('head')[0]
-  Promise.all(
+  Promise.all<(Promise<any> | undefined)[]>(
     files.map(file => {
       return new Promise<void>(resolve => {
         // 创建script标签并添加到head
