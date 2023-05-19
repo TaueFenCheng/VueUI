@@ -1,7 +1,7 @@
 # VueUI
 
 ```json
-    "publishConfig": {
+  "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
 ```
