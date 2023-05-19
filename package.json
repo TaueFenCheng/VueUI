@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "play": "pnpm dev --filter ./play",
     "prettier": "prettier --write .",
     "lint": "eslint --ext .ts packages/*/**.ts",
     "lint:fix": "eslint --ext .ts packages/*/**.ts --fix",
@@ -15,6 +14,9 @@
     "dist"
   ],
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.3",
@@ -36,9 +38,6 @@
     "vue": "^3.3.2"
   },
   "homepage": "https://github.com/TaueFenCheng/VueUI.git",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
       "eslint --ext .ts packages/*/**.ts",
