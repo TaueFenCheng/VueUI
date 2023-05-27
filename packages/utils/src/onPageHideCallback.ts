@@ -5,9 +5,9 @@
 export interface OnHiddenCallback {
   (event: Event): void
 }
-  
-const addEventListener =  window.addEventListener;
-const removeEventListener =  window.removeEventListener;
+
+const addEventListener = window.addEventListener
+const removeEventListener = window.removeEventListener
 
 export const onHidden = (cb: OnHiddenCallback, once?: boolean) => {
   const onHiddenOrPageHide = (event: Event) => {
@@ -23,4 +23,8 @@ export const onHidden = (cb: OnHiddenCallback, once?: boolean) => {
   // Some browsers have buggy implementations of visibilitychange,
   // so we use pagehide in addition, just to be safe.
   addEventListener('pagehide', onHiddenOrPageHide, true)
+  return () => {
+    removeEventListener('visibilitychange', onHiddenOrPageHide, true)
+    removeEventListener('pagehide', onHiddenOrPageHide, true)
+  }
 }
